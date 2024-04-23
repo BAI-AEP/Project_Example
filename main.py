@@ -1,4 +1,5 @@
 import os
+
 from console.MainMenu import MainMenu
 from console.console_base import Application
 
