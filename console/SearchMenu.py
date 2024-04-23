@@ -25,7 +25,7 @@ class SearchMenu(Menu):
 
                 # navigate again to this menu
                 return self
-            case 2: # option 2
+            case 2:  # option 2
                 self.clear()
                 name = input("Hotel Name: ")
                 hotels_by_name = self._search_manager.get_hotels_by_name(name)
@@ -35,7 +35,7 @@ class SearchMenu(Menu):
 
                 # navigate again to this menu
                 return self
-            case 3: # option 3
+            case 3:  # option 3
                 self.clear()
                 stars = input("Hotel Stars: ")
                 # TODO: Check if it is number, if not output error and ask again... we have done that
@@ -46,6 +46,6 @@ class SearchMenu(Menu):
 
                 # navigate again to this menu
                 return self
-            case 4: # option 4
+            case 4:  # option 4
                 # navigate back to the main menu
                 return self._main_menu
