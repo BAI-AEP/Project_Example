@@ -30,7 +30,7 @@ class SearchMenu(Menu):
                 return self
             case 3:
                 self.clear()
-                stars = input("Hotel Stars")
+                stars = input("Hotel Stars: ")
                 # TODO: Check if it is number, if not output error and ask again... we have done that
                 # TODO: implement the search by stars in the search manager
                 # TODO: output the search
