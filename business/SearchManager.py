@@ -18,6 +18,10 @@ class SearchManager(BaseManager):
         query = select(Hotel).where(func.lower(Hotel.name).like(f"%{name.lower()}%"))
         return self.select_all(query)
 
+    def get_hotel_by_id(self, id: int) -> Hotel:
+        query = select(Hotel).where(Hotel.id == id)
+        return self.select_one(query)
+
 if __name__ == '__main__':
     # This is only for testing without Application
 
