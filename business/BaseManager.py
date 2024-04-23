@@ -17,6 +17,7 @@ class BaseManager(object):
         self.__db_file = Path(db_file)
 
         # Ensure the db file exists, if not create a new db file with or without example data
+        # You have to delete the db file, if you need a new fresh db.
         if not self.__db_file.is_file():
             init_db(db_file, generate_example_data=generate_example_data)
 
@@ -24,7 +25,7 @@ class BaseManager(object):
         # the engine is private, no need for subclasses to be able to access it.
         self.__engine = create_engine(f'sqlite:///{db_file}')
         # create the session as db connection
-        # subclasses need access, so every inheriting manager has access to this connection
+        # subclasses need access therefore, protected attribute so every inheriting manager has access to the connection
         self._session = scoped_session(sessionmaker(bind=self.__engine))
 
     def select_all(self, query: Select):
