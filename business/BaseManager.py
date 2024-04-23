@@ -12,7 +12,7 @@ class BaseManager(object):
     def __init__(self, generate_example_data: bool = True):
         db_file = os.environ.get('DB_FILE')
         if not db_file:
-            raise ValueError("You have to define the environment variables 'DB_FILE'")
+            raise ValueError("You have to define the environment variable 'DB_FILE'")
         self.__db_file = Path(db_file)
         if not self.__db_file.is_file():
             init_db(db_file, generate_example_data=generate_example_data)
