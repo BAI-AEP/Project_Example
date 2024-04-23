@@ -40,7 +40,7 @@ class SearchMenu(Menu):
                 stars = input("Hotel Stars: ")
                 # TODO: Check if it is number, if not output error and ask again... we have done that
                 # TODO: implement the search by stars in the search manager
-                # TODO: output the search
+                # TODO: output the search result
                 print("Implement this by next week")
                 input("Press Enter to continue...")
 
