@@ -3,10 +3,12 @@ import os
 from console.MainMenu import MainMenu
 from console.console_base import Application
 
+DEFAULT_DB = "./data/hotel_reservation.db"
 
 if __name__ == "__main__":
-    # set the environment variable, so managers know where to find the db file
-    os.environ['DB_FILE'] = "./data/hotel_reservation.db"
+    # if the environment variable is not set, set it to default
+    if not os.environ['DB_FILE']:
+        os.environ['DB_FILE'] = DEFAULT_DB
 
     # create the very first main menu
     main_menu = MainMenu()
