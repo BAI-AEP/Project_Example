@@ -20,10 +20,14 @@ class SearchManager(BaseManager):
 
 if __name__ == '__main__':
     # This is only for testing without Application
+
+    # You should set the variable in the run configuration
     # Because we are executing this file in the folder ./business/
     # we need to relatively navigate first one folder up and therefore,
     # use ../data in the path instead of ./data
-    os.environ['DB_FILE'] = '../data/test.db'
+
+    if not os.environ.get('DB_FILE'):
+        os.environ['DB_FILE'] = '../data/test.db'
     search_manager = SearchManager()
     all_hotels = search_manager.get_all_hotels()
     for hotel in all_hotels:
