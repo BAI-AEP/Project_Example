@@ -34,6 +34,7 @@ class SearchMenu(Menu):
                 # TODO: Check if it is number, if not output error and ask again... we have done that
                 # TODO: implement the search by stars in the search manager
                 # TODO: output the search
+                input("Press Enter to continue...")
                 return self
             case 4:
                 return self._main_menu
