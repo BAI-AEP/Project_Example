@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # create the very first main menu
     main_menu = MainMenu()
-    # create the app
+    # create the app with the very first menu to start
     app = Application(main_menu)
     # run the app which starts with the main menu set in the constructor above.
     app.run()
