@@ -7,7 +7,7 @@ DEFAULT_DB = "./data/hotel_reservation.db"
 
 if __name__ == "__main__":
     # if the environment variable is not set, set it to default
-    if not os.environ['DB_FILE']:
+    if not os.environ.get('DB_FILE'):
         os.environ['DB_FILE'] = DEFAULT_DB
 
     # create the very first main menu

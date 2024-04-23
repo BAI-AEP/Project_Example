@@ -3,7 +3,7 @@ import os
 from sqlalchemy import select, func
 
 from business.BaseManager import BaseManager
-from data_models.models import Hotel
+from data_models.models import *
 
 
 class SearchManager(BaseManager):
