@@ -32,7 +32,7 @@ class SearchMenu(Menu):
     def __search_by_stars(self):
         self.clear()
         stars = input("Hotel Stars: ")
-        # TODO: Check if it is number, if not output error and ask again... we have done that
+        # TODO: Check if it is a number 1-5, if not output error and ask again... we have done that
         # TODO: implement the search by stars in the search manager and call the method
         # TODO: output the search result
         print("Implement this by next week")
