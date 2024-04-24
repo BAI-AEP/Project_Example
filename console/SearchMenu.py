@@ -14,38 +14,40 @@ class SearchMenu(Menu):
 
         self._search_manager = SearchManager()
 
+    def __search_all(self):
+        self.clear()
+        all_hotels = self._search_manager.get_all_hotels()  # search all hotels with the search manager
+        for hotel in all_hotels:
+            print(hotel)
+        input("Press Enter to continue...")
+
+    def __search_by_name(self):
+        self.clear()
+        name = input("Hotel Name: ")
+        hotels_by_name = self._search_manager.get_hotels_by_name(name)  # search by name with the search manager
+        for hotel in hotels_by_name:
+            print(hotel)
+        input("Press Enter to continue...")
+
+    def __search_by_stars(self):
+        self.clear()
+        stars = input("Hotel Stars: ")
+        # TODO: Check if it is number, if not output error and ask again... we have done that
+        # TODO: implement the search by stars in the search manager and call the method
+        # TODO: output the search result
+        print("Implement this by next week")
+        input("Press Enter to continue...")
+
     def _navigate(self, choice: int):
         match choice:
             case 1:  # option 1
-                # search all hotels with the search manager
-                all_hotels = self._search_manager.get_all_hotels()
-                for hotel in all_hotels:
-                    print(hotel)
-                input("Press Enter to continue...")
-
-                # navigate again to this menu
+                self.__search_all()  # navigate again to this menu
                 return self
             case 2:  # option 2
-                self.clear()
-                name = input("Hotel Name: ")
-                hotels_by_name = self._search_manager.get_hotels_by_name(name)
-                for hotel in hotels_by_name:
-                    print(hotel)
-                input("Press Enter to continue...")
-
-                # navigate again to this menu
-                return self
+                self.__search_by_name()
+                return self  # navigate again to this menu
             case 3:  # option 3
-                self.clear()
-                stars = input("Hotel Stars: ")
-                # TODO: Check if it is number, if not output error and ask again... we have done that
-                # TODO: implement the search by stars in the search manager
-                # TODO: output the search result
-                print("Implement this by next week")
-                input("Press Enter to continue...")
-
-                # navigate again to this menu
-                return self
+                self.__search_by_stars()
+                return self  # navigate again to this menu
             case 4:  # option 4
-                # navigate back to the main menu
-                return self._main_menu
+                return self._main_menu  # navigate back to the main menu

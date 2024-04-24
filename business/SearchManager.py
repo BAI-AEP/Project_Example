@@ -29,7 +29,7 @@ if __name__ == '__main__':
     # Because we are executing this file in the folder ./business/
     # we need to relatively navigate first one folder up and therefore,
     # use ../data in the path instead of ./data
-
+    # if the environment variable is not set, set it to a default
     if not os.environ.get('DB_FILE'):
         os.environ['DB_FILE'] = '../data/test.db'
     search_manager = SearchManager()
