@@ -6,7 +6,7 @@ class SearchMenu(Menu):
     def __init__(self, main_menu: Menu):
         super().__init__("Search Hotel")
         self.add_option(MenuOption("Show all hotel"))  # option 1
-        self.add_option(MenuOption("Search by name"))  # option 2
+        self.add_option(MenuOption("Search by city"))  # option 2
         self.add_option(MenuOption("Search by stars"))  # option 3
         # TODO: Add further MenuOptions to search by the address.city etc. of the hotels.
         self.add_option(MenuOption("Back"))  # option 4
@@ -22,10 +22,10 @@ class SearchMenu(Menu):
             print(hotel)
         input("Press Enter to continue...")
 
-    def __search_by_name(self):
+    def __search_by_city(self):
         self.clear() # clear the console
-        name = input("Hotel Name: ")
-        hotels_by_name = self.__search_manager.get_hotels_by_name(name)  # search by name with the search manager
+        city = input("City: ")
+        hotels_by_name = self.__search_manager.get_hotels_by_city(city)  # search by name with the search manager
         for hotel in hotels_by_name:
             print(hotel)
         input("Press Enter to continue...")
@@ -47,7 +47,7 @@ class SearchMenu(Menu):
                 self.__show_all()
                 return self  # navigate again to this menu
             case 2:  # option 2 (Search by name)
-                self.__search_by_name()
+                self.__search_by_city()
                 return self  # navigate again to this menu
             case 3:  # option 3 (Search by starts)
                 self.__search_by_stars()
