@@ -14,12 +14,12 @@ class BaseManager(object):
         db_file = os.environ.get('DB_FILE')
         if not db_file:
             raise ValueError("You have to define the environment variable 'DB_FILE'")
-        self.__db_file = Path(db_file)
+        self.__db_filepath = Path(db_file)
 
         # Ensure the db file exists, if not create a new db file with or without example data
         # You have to delete the db file, if you need a new fresh db.
-        if not self.__db_file.is_file():
-            init_db(db_file, generate_example_data=generate_example_data)
+        if not self.__db_filepath.is_file():
+            init_db(str(self.__db_filepath), generate_example_data=generate_example_data)
 
         # create the engine and the session.
         # the engine is private, no need for subclasses to be able to access it.

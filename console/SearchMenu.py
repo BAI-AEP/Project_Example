@@ -15,7 +15,7 @@ class SearchMenu(Menu):
 
         self._search_manager = SearchManager()
 
-    def __search_all(self):
+    def __show_all(self):
         self.clear() # clear the console
         all_hotels = self._search_manager.get_all_hotels()  # search all hotels with the search manager
         for hotel in all_hotels:
@@ -43,15 +43,15 @@ class SearchMenu(Menu):
 
     def _navigate(self, choice: int):
         match choice:
-            case 1:  # option 1
-                self.__search_all()  # navigate again to this menu
-                return self
-            case 2:  # option 2
+            case 1:  # option 1 (Show all hotel)
+                self.__show_all()
+                return self  # navigate again to this menu
+            case 2:  # option 2 (Search by name)
                 self.__search_by_name()
                 return self  # navigate again to this menu
-            case 3:  # option 3
+            case 3:  # option 3 (Search by starts)
                 self.__search_by_stars()
                 return self  # navigate again to this menu
             # TODO: Add further navigation options according to the added MenuOptions in the constructor.
-            case 4:  # option 4
+            case 4:  # option 4 (Back)
                 return self._main_menu  # navigate back to the main menu
