@@ -1,5 +1,5 @@
 from console.console_base import Menu, MenuOption
-from console.SearchMenu import SearchMenu
+from ui.SearchMenu import SearchMenu
 
 class MainMenu(Menu):
     def __init__(self):

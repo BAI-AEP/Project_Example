@@ -1,6 +1,6 @@
 import os
 
-from console.MainMenu import MainMenu
+from ui.MainMenu import MainMenu
 from console.console_base import Application
 
 DEFAULT_DB = "./data/hotel_reservation.db"
